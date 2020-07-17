@@ -1,0 +1,19 @@
+.search-box{
+    width: 700px;
+    margin-bottom: 5%;
+    margin: 0 auto; 
+    padding-bottom: 2%; 
+    display: flex;
+}
+
+.products-table{
+    width: 700px;
+    margin: 0 auto; 
+    font-size: 12px;
+
+}
+
+.products-img{
+    width: 100px;
+    height: 70px;
+}

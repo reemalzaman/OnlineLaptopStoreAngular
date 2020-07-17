@@ -1,0 +1,54 @@
+<div class="container-fluid-nav text-center">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Online Laptop Store</a>
+    <button  routerLink="/products" type="button" class="btn btn-outline-warning s-btn">Search Products</button>
+
+</nav>
+</div>
+<div style="height: 100px;"></div>
+<router-outlet ></router-outlet>
+
+
+<div class="list pagination justify-content-center" style="justify-content: center;">
+  <ul>
+
+    <table *ngFor = "let item for collection | paginate : config " class="table table-bordered products-table" >
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Model number</th>
+        <th>Created date</th>
+        <th>Video</th>
+        <th>Category</th>
+        <th>Company name</th>
+        <th>Image 1</th>
+        <th>Image 2</th>
+        <th>Image 3</th>
+        <th>Image 4</th>
+      </tr>
+  
+      <tr *ngFor = "let products of productsList">
+        <td>{{products.id}}</td>
+        <td>{{products.name}}</td>
+        <td>{{products.color}}</td>
+        <td>{{products.description}}</td>
+        <td>{{products.price}}</td>
+        <td>{{products.modelNumber}}</td>
+        <td>{{products.createdDate}}</td>
+        <td>{{products.video}}</td>
+        <td>{{products.category}}</td>
+        <td>{{products.companyName}}</td>
+        <td>  <img class="products-img" src="{{products.image1}}"></td>
+        <td> <img class="products-img" src="{{products.image2}}"></td>
+        <td> <img  class="products-img"src="{{products.image3}}"></td>
+        <td> <img  class="products-img"src="{{products.image4}}"></td>
+      </tr>
+    </table>
+
+  </ul>
+  <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+</div>
+
